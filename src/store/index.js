@@ -127,21 +127,20 @@ export default new Vuex.Store({
         .catch((err) => {
           console.log(err)
         })
+    },
+    subtractCart (context, payload) {
+      axios({
+        url: `/cart/min/${payload}`,
+        method: 'PATCH',
+        headers: { access_token: localStorage.access_token }
+      })
+        .then(({ data }) => {
+          context.dispatch('fetchCart')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
-    // subtractCart (context, payload) {
-    //   axios({
-    //     url: `/cart/min/${payload}`,
-    //     method: 'PATCH',
-    //     headers: { access_token: localStorage.access_token }
-    //   })
-    //     .then(({ data }) => {
-    //       console.log(data)
-    //       context.dipatch('fetchCart')
-    //     })
-    //     .catch((err) => {
-    //       console.log(err)
-    //     })
-    // }
   },
   modules: {
   }

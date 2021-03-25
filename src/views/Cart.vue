@@ -20,7 +20,7 @@
         <td>{{ item.quantity }} </td>
         <td>
           <button @click.prevent="addCart(item.id)" class="btn btn-primary">+</button>
-          <!-- <button @click.prevent="subtractCart(item.id)" class="btn btn-primary">-</button></td> -->
+          <button @click.prevent="subtractCart(item.id)" class="btn btn-primary">-</button></td>
         <td>{{ item.Product.price }}</td>
         <td>{{ item.quantity * item.Product.price }}</td>
         <td>
