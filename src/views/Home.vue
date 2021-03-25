@@ -11,8 +11,6 @@
         img-width="1920"
         img-height="550"
         style="text-shadow: 1px 1px 2px #333;"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
       >
 
         <!-- Slide with blank fluid image to maintain slide aspect ratio -->

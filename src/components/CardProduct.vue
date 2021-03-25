@@ -3,6 +3,7 @@
     <img :src="item.image_url" class="card-img-top  mt-2 h-75" alt="...">
           <p>{{ item.name }}</p>
           <p>Harga: Rp.{{ item.price }}</p>
+          <p>Stock: {{ item.stock }}</p>
           <button @click.prevent="addToCart" class="btn btn-primary">Add To Cart</button>
         <div class="card-body d-flex flex-column align-items-center">
 

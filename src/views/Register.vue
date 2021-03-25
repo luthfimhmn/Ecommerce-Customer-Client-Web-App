@@ -1,7 +1,7 @@
 <template>
    <div class="container">
         <div class="row d-flex justify-content-center align-items-center shadow-lg mt-5 mx-auto" style="width:700px; height:400px;">
-            <div class="col-5"> <img src="../assets/pepeg.jpeg" class="card-img-top rounded-circle"></div>
+            <div class="col-5"> <img src="../assets/mall.jpg" class="card-img-top rounded-circle"></div>
             <div class="col-7 ">
                 <h3>Register</h3>
                 <form @submit.prevent="register">
