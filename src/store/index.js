@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import axios from '../axios/axios'
 import router from '../router'
 // import router from '../router/index'
+import Swal from 'sweetalert2'
 
 Vue.use(Vuex)
 
@@ -39,6 +40,10 @@ export default new Vuex.Store({
       })
         .then((result) => {
           console.log('Register Success')
+          Swal.fire({
+            title: 'Register success!',
+            icon: 'success'
+          })
           router.push('/login')
         })
         .catch(err => {
@@ -56,6 +61,10 @@ export default new Vuex.Store({
       })
         .then((result) => {
           localStorage.setItem('access_token', result.data.access_token)
+          Swal.fire({
+            title: 'Login success!',
+            icon: 'success'
+          })
           router.push('/')
         })
         .catch((err) => {
@@ -114,6 +123,23 @@ export default new Vuex.Store({
           console.log(err)
         })
     },
+    addToCartFromCard (context, payload) {
+      axios({
+        url: `/cart/${payload}`,
+        method: 'POST',
+        headers: { access_token: localStorage.access_token }
+      })
+        .then(({ data }) => {
+          Swal.fire({
+            title: 'Added to cart success!',
+            icon: 'success'
+          })
+          context.dispatch('fetchCart')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
     removeFromCart (context, payload) {
       axios({
         url: `/cart/${payload}`,
@@ -121,7 +147,10 @@ export default new Vuex.Store({
         headers: { access_token: localStorage.access_token }
       })
         .then(({ data }) => {
-          console.log(payload)
+          Swal.fire({
+            title: 'Removed from cart',
+            icon: 'success'
+          })
           context.dispatch('fetchCart')
         })
         .catch((err) => {

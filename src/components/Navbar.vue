@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 export default {
   name: 'Navbar',
   methods: {
@@ -17,6 +18,10 @@ export default {
       localStorage.removeItem('access_token')
       localStorage.removeItem('role')
       localStorage.removeItem('name')
+      Swal.fire({
+        title: 'Logout Success',
+        icon: 'success'
+      })
       this.$router.push('/login')
     },
     goToCart () {

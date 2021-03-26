@@ -18,7 +18,7 @@ export default {
   props: ['item'],
   methods: {
     addToCart () {
-      this.$store.dispatch('addToCart', this.item.id)
+      this.$store.dispatch('addToCartFromCard', this.item.id)
     }
   }
 }
