@@ -112,8 +112,8 @@ export default new Vuex.Store({
     },
     addToCart (context, payload) {
       axios({
-        url: `/cart/${payload}`,
-        method: 'POST',
+        url: `/cart/plus/${payload}`,
+        method: 'PATCH',
         headers: { access_token: localStorage.access_token }
       })
         .then(({ data }) => {
