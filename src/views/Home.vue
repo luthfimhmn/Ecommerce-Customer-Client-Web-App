@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="carousel">
       <b-carousel
         id="carousel-1"
         :interval="5000"
@@ -53,5 +53,15 @@ export default {
   .home {
     display: flex;
     justify-content: center;
+  }
+
+  .carousel{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  width: 50%;
+  width: 1000px;
+  height: 360px;
+  padding: 10px;
   }
 </style>
